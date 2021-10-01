@@ -1,0 +1,26 @@
+<project name="IIB-CI-MAIN" default="init" basedir="..">
+<description>IIB Continuous Integration Demo (main script)</description>
+<target name="init">
+<tstamp />
+<property environment="env" />
+<property name="path.build" value="Build" />
+<property name="path.tools" value="/opt/ace-11.0.0.7/tools" />
+<property name="path.ace" value="/opt/ace-11.0.0.7/server/bin" />
+<property name="base.dir" value="/root" />
+<property name="path.store" value="/home/bandaru/Desktop/Docker" />
+<antcall target="TestApplication" />
+</target>
+<target name="TestApplication">
+<!-- build workspace and create BAR file -->
+<echo message="Creating Bar"/>
+<property name="ace.bar" value="${path.store}/TestApplication.bar"/>
+<exec executable="${path.tools}/mqsicreatebar">
+<arg value="-data" />
+<arg value="${base.dir}" />
+<arg value="-b" />
+<arg value="${ace.bar}" />
+<arg value="-a" />
+<arg value="TestApplication" />
+</exec>
+</target>
+</project>
