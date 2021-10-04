@@ -1,6 +1,6 @@
 FROM ibmcom/ace
 USER aceuser
-COPY TestApplication.bar /home/aceuser/initial-config/bars/
+COPY bars/ /home/aceuser/initial-config/bars/
 COPY truststore.jks /home/aceuser/initial-config/truststore.jks
 #COPY cert.arm /home/aceuser/initial-config/truststore/
 COPY keystore.jks /home/aceuser/initial-config/keystore.jks
