@@ -30,7 +30,7 @@ jobs:
         with:
           host: ${{ secrets.SONARQUBE_HOST }}
           login: ${{ secrets.SONARQUBE_TOKEN }}
-          projectBaseDir: "/root/TestApplication"
+          projectBaseDir: "TestApplication"
           projectKey: "Github_CICD"
           projectName: "Github_CICD"
           projectVersion: "v0.0.1"
@@ -55,7 +55,7 @@ jobs:
           OC_PASSWORD: ${{secrets.OC_PASSWORD}}
       run:  docker login -u $DOCKER_USERNAME --password $(oc whoami -t) default-route-openshift-image-registry.apps.ocp4.eidikointernal.com
     - name: Build the Docker image
-      run: docker build -t devopsimage:v1 --file dockerfile . 
+      run: docker build -t devopsimage:v1 -f dockerfile . 
     - name: oc login,oc project,Docker tag&push
       run: |
             /usr/local/bin/ && ./oc login -u $OC_USERNAME -p $OC_PASSWORD --insecure-skip-tls-verify=true
