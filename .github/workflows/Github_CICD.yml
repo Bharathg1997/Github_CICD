@@ -30,7 +30,7 @@ jobs:
         with:
           host: ${{ secrets.SONARQUBE_HOST }}
           login: ${{ secrets.SONARQUBE_TOKEN }}
-          projectBaseDir: "TestApplication"
+          projectBaseDir: "/root/TestApplication"
           projectKey: "Github_CICD"
           projectName: "Github_CICD"
           projectVersion: "v0.0.1"
