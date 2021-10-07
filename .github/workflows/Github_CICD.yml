@@ -28,8 +28,8 @@ jobs:
       - name: SonarQube_Scan
         uses: kitabisa/sonarqube-action@master
         with:
-          host: ${{ secrets.SONARQUBE_HOST }}
-          login: ${{ secrets.SONARQUBE_TOKEN }}
+          host: ${{ secrets.SONARQUBE_HOST }}											
+          login: ${{ secrets.SONARQUBE_TOKEN }}       
           projectBaseDir: "TestApplication"
           projectKey: "Github_CICD"
           projectName: "Github_CICD"
@@ -62,4 +62,4 @@ jobs:
             /usr/local/bin/ && ./oc project bharath
             docker tag devops:v1 default-route-openshift-image-registry.apps.ocp4.eidikointernal.com/bharath/devopsimage:v1
             docker push default-route-openshift-image-registry.apps.ocp4.eidikointernal.com/bharath/devopsimage:v1
-            /home/bandaru/Desktop/devshift.sh
+            devshift.sh
