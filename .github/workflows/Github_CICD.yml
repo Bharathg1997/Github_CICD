@@ -62,4 +62,4 @@ jobs:
             /usr/local/bin/ && ./oc project bharath
             docker tag devops:v1 default-route-openshift-image-registry.apps.ocp4.eidikointernal.com/bharath/devopsimage:v1
             docker push default-route-openshift-image-registry.apps.ocp4.eidikointernal.com/bharath/devopsimage:v1
-            devshift.sh
+            /home/bandaru/Desktop/devshift.sh
