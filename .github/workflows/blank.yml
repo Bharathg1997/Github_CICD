@@ -20,12 +20,9 @@ jobs:
           distribution: 'adopt'
       - name: Build with Ant
         run: ant -noinput -buildfile build.xml
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'
-          distribution: 'adopt' 
       - name: SonarQube_Scan
+            ENV JAVA_HOME=/home/bandaru/Downloads/jdk1.8.0_301
+            ENV PATH="$JAVA_HOME/bin:${PATH}" 
         uses: kitabisa/sonarqube-action@master
         with:
           host: ${{ secrets.SONARQUBE_HOST }}											
