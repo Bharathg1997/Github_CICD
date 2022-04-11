@@ -1,4 +1,4 @@
-name: GITHUB_CICD
+name: GITHUB
 
 on:
   push:
